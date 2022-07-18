@@ -1,8 +1,16 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useHistory } from "react-router-dom";
 
 export const Page1Detail1 = () => {
   const { state } = useLocation();
   console.log(state);
 
-  return <h1>Page1Detail1</h1>;
+  const history = useHistory();
+  const onClickBack = () => history.goBack();
+
+  return (
+    <div>
+      <h1>Page1Detail1</h1>
+      <button onClick={onClickBack}>戻る</button>
+    </div>
+  );
 };
